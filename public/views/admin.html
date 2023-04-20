@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">User Management</h1>
+    <table class="table" id="user-table">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Admin</th>
+          <th>Banned</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // Fetch users and populate the table
+    function fetchUsers() {
+      fetch('/admin/users', {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      })
+      .then(response => response.json())
+      .then(users => {
+        let tableBody = '';
+        users.forEach(user => {
+          tableBody += `
+            <tr>
+              <td>${user.email}</td>
+              <td>${user.isAdmin ? 'Yes' : 'No'}</td>
+              <td>${user.isBanned ? 'Yes' : 'No'}</td>
+              <td>
+                <button class="btn btn-sm btn-warning" onclick="toggleBan('${user._id}')">${user.isBanned ? 'Unban' : 'Ban'}</button>
+              </td>
+            </tr>
+          `;
+        });
+        document.querySelector('#user-table tbody').innerHTML = tableBody;
+      })
+      .catch(error => {
+        console.error('Error fetching users:', error);
+      });
+    }
+
+    // Toggle ban status for a user
+    function toggleBan(userId) {
+      fetch(`/admin/user/${userId}/toggle-ban`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+        })
+        .then(response => {
+        if (response.ok) {
+        fetchUsers();
+        } else {
+        alert('Failed to update user ban status');
+        }
+        })
+        .catch(error => {
+        console.error('Error updating user ban status:', error);
+        });
+        }
+        
+ 
+        // Fetch users when the page loads
+        document.addEventListener('DOMContentLoaded', fetchUsers);
+          </script>
+        </body>
+        </html>
