@@ -1,0 +1,7 @@
+Summary of Work Journaling & Reporting:
+
+During the course of the project, I faced some challenges that impacted my progress. Health issues made it difficult for me to maintain a steady pace and affected my overall productivity. In addition, I encountered technical issues related to third-party cookies, which consumed a significant amount of time.
+
+To overcome these obstacles, I decided to implement JWT (JSON Web Tokens) as a solution to the third-party cookies problem. This decision helped streamline the process and allowed me to focus on other aspects of the project.
+
+Throughout the project, I learned the importance of adapting my workflow and tools based on the specific challenges I face. Moving forward, I will continue to refine my work process and remain open to exploring new methods and tools to enhance my productivity and efficiency.
