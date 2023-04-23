@@ -1,6 +1,6 @@
 # Image Generator
 
-Welcome to the Image Generator project! This repository contains a powerful AI-driven application that can create unique and visually stunning images based on your input.
+Welcome to the Image Generator project! This repository contains a powerful AI-driven application that can create unique and visually stunning images based on your input, the input is then enhanced by ai.
 
 ## Table of Contents
 
