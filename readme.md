@@ -36,13 +36,21 @@ npm install
 4. Create a .env file in the project root directory and add the necessary environment variables:
 MONGODB_URI='mongodb://localhost:27017/image-generator'
 OPENAI_API_KEY='your_openai_api_key'
+
 SESSION_SECRET='your_session_secret'
+
 DB_HOST='localhost'
+
 DB_USER='your_database_user'
+
 DB_PASSWORD='your_database_password'
+
 DB_NAME='imagen'
+
 JWT_SECRET='your_jwt_secret'
+
 STABILITY_API_KEY='your_stability_api_key'
+
 
 
 
