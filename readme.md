@@ -52,7 +52,7 @@ JWT_SECRET='your_jwt_secret'
 
 STABILITY_API_KEY='your_stability_api_key'
 
-
+PRE_PROMPT="PROMPT FOR BETTER IMAGE GENERATION"
 
 
 ## Usage
